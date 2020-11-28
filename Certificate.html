@@ -621,7 +621,7 @@ Date Updated : 03.06.2020
 ]
 		
 				//Smart Contract Address
-				var contractaddress = '0xd9145CCE52D386f254917e481eB44e9943F39138';
+				var contractaddress = '0x473053C878A500DbF89D402D2e8902Bf796A3530';
 				
 					// Function to get the status about ERC-721 Token
 			function loadstatus() {
@@ -648,7 +648,7 @@ Date Updated : 03.06.2020
 				console.log("Issue NamChain Webinar Certificate");
 						
 				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
+				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
 								
 				var name = document.getElementById("name").value;
 				var desgn = document.getElementById("desgn").value;
@@ -676,7 +676,7 @@ Date Updated : 03.06.2020
 				console.log("Getting NamChain Webinar Certificate Details");
 						
 				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
+				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
 								
 				var tokenID = document.getElementById("tokenIDd").value;
 				
