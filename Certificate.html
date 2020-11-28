@@ -629,7 +629,7 @@ Date Updated : 03.06.2020
 				console.log("Invoking Smart Contracts - Status");
 						
 				//Instantiate and connect to contract address via ABI
-				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
+				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
 				
 				//call the "totalSupply" function
 				/* var result = myContract.methods.totalSupply().call(function (err, result) {
