@@ -1,14 +1,11 @@
 
-<!-- 
-Author       : Ramaguru Radhakrishnan
-Date Updated : 03.06.2020
--->
+
 
 <!DOCTYPE html>
 <html>
 <head>
 	<link rel="icon" href="https://1.bp.blogspot.com/-0SArWfduw68/XkxV8EmBBcI/AAAAAAAAABw/h9aWSWbm0J4kilgn3xddzQ3PdoP-e3RZgCLcBGAsYHQ/s1600/SAVE_20200127_132431.jpg" type="image/jpg" sizes="16x16">
-    <title>Webinar Certificate Issuer</title>
+    <title>Certificate Issuing</title>
     <meta charset="UTF-8"/>
 	<style>
 	body{        
@@ -40,14 +37,7 @@ Date Updated : 03.06.2020
 	</style>
 </head>
 <body>
-	<div class="fixed-header">
-		<div class="container">
-		<center>
-			<h1> <image src="https://1.bp.blogspot.com/-0SArWfduw68/XkxV8EmBBcI/AAAAAAAAABw/h9aWSWbm0J4kilgn3xddzQ3PdoP-e3RZgCLcBGAsYHQ/s1600/SAVE_20200127_132431.jpg" type="image/jpg" width="25px" height="25px"> NamChain - Open Initiative Research Lab </h1>
-			<h2> Webinar Certificate Issuer </h2>
-		</center>
-		</div>
-	</div>
+	
         
 	<div class="container">	
 	<p>
@@ -686,11 +676,11 @@ Date Updated : 03.06.2020
 				if (err) { console.log(err); }
 				if (result) { 
 				
-					document.getElementById("cname").innerHTML = result[1]; 
-					document.getElementById("cdesgn").innerHTML = result[3]; 
-					document.getElementById("cinst").innerHTML = result[4]; 
-					document.getElementById("ccertid").innerHTML = result[2]; 
-					document.getElementById("cholder").innerHTML = result[0]; 
+					document.getElementById("cname").innerHTML = result[0]; 
+					document.getElementById("cdesgn").innerHTML = result[1]; 
+					document.getElementById("cinst").innerHTML = result[2]; 
+					document.getElementById("ccertid").innerHTML = result[3]; 
+					document.getElementById("cholder").innerHTML = result[4]; 
 				
 				}
 				
@@ -702,11 +692,7 @@ Date Updated : 03.06.2020
 		
     </script>
 	
-	<div class="fixed-footer">
-		<div class="container">
-			<center> <h5> Copyright &copy; 2019-2020 <br/> NamChain - Open Initiative Research Lab, Coimbatore, Tamil Nadu, India </h5> </center>
-		</div>
-	</div>
+	
 
 </body>
 </html>
