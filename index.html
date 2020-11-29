@@ -48,6 +48,11 @@
                             </div>
 							
 							<div class="form-group">
+                                <label ><span class="iconify" data-icon="zmdi:equalizer" data-inline="false"></span></i></label>
+                                <input type="text" id="pos" placeholder="Position"/>
+                            </div>
+							
+							<div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:shield-check" data-inline="false"></span></label>
                                 <input type="text" id="address" placeholder="Holder Wallet Address"/>
                             </div>
@@ -78,7 +83,10 @@
                     </div>
                     <div class="issue-image">
                         <figure><img src="https://yt3.ggpht.com/a/AATXAJy1Gaf6gOAO1-MKBFtvjAE6xN2ZoUTgAGRIH581Lw=s900-c-k-c0xffffffff-no-rj-mo" alt="kct logo"></figure>
-              
+						<div class="form-group">
+                                Total Certificates Issued : 
+                                <div id="tsupply" style="color:green;"/> <div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +104,7 @@
                         <h2 class="form-title">Verify Certificate</h2>
                         <form  class="register-form" >
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="your_name"><span class="iconify" data-icon="zmdi:labels" data-inline="false"></span></label>
                                 <input type="text" id="tokenIDd" placeholder="Certificate Token ID"/>
                             </div>
                             <div>
@@ -104,6 +112,7 @@
 								<tr><td style="width:50%;height:30px;"> Name :   <div id="cname" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Desgination :   <div id="cdesgn" style="color:green;"></div></td></tr>
 								<tr><td style="width:50%;height:30px;"> Institution :  <div id="cinst" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Position :  <div id="cpos" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Certificate ID :   <div id="ccertid" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Holder Wallet Address :  <div id="cholder" style="color:green;"></div></td></tr>
 							</table>
@@ -269,6 +278,11 @@
 			{
 				"internalType": "string",
 				"name": "ui_Inst",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "ui_pos",
 				"type": "string"
 			},
 			{
@@ -537,6 +551,11 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "ui_pos",
+				"type": "string"
+			},
+			{
 				"internalType": "uint256",
 				"name": "Cert_ID",
 				"type": "uint256"
@@ -658,25 +677,26 @@
 		"type": "function"
 	}
 ]
+
 		
 				//Smart Contract Address
-				var contractaddress = '0x473053C878A500DbF89D402D2e8902Bf796A3530';
+				var contractaddress = '0xc678717e08274eDeC083eBb4133E3f7BE7d3E85a';
 				
 					// Function to get the status about ERC-721 Token
 			function loadstatus() {
 					
-				console.log("Invoking Smart Contracts - Status");
+				console.log("Invoking Smart Contracts - Status...");
 						
 				//Instantiate and connect to contract address via ABI
 				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
 				
 				//call the "totalSupply" function
-				/* var result = myContract.methods.totalSupply().call(function (err, result) {
+				var result = myContract.methods.totalSupply().call(function (err, result) {
 				
 				if (err) { console.log(err); }
 				if (result) { document.getElementById("tsupply").innerHTML = result - 1; }
 				
-				}); */
+				});
 					
 			
 				}
@@ -684,7 +704,7 @@
 			// Function to call the "Issue Certificate" in Deployed Smart Contract
 			function issue_cert() {
 					
-				console.log("Issue NamChain Webinar Certificate");
+				console.log("Issuing College Competition Certificate");
 						
 				//Instantiate and connect to contract address via ABI
 				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
@@ -693,12 +713,13 @@
 				var desgn = document.getElementById("desgn").value;
 				var inst = document.getElementById("inst").value;
 				var cID = document.getElementById("cID").value;
+				var pos = document.getElementById("pos").value;
 				var address = document.getElementById("address").value;
 				var tokenID = document.getElementById("tokenID").value;
 				//var ipfshash = document.getElementById("ipfshash").value;
 				
 				//call the "issue certificate" function
-				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, cID, address).send(function (err, result) {
+				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, cID, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
 				if (result) { document.getElementById("result").innerHTML = result; }
@@ -712,7 +733,7 @@
 			// Function to call the "View Details" in Deployed Smart Contract
 			function view_certdetails() {
 					
-				console.log("Getting NamChain Webinar Certificate Details");
+				console.log("Getting College Competition Certificate Details");
 						
 				//Instantiate and connect to contract address via ABI
 				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
@@ -728,16 +749,15 @@
 					document.getElementById("cname").innerHTML = result[0]; 
 					document.getElementById("cdesgn").innerHTML = result[1]; 
 					document.getElementById("cinst").innerHTML = result[2]; 
-					document.getElementById("ccertid").innerHTML = result[3]; 
-					document.getElementById("cholder").innerHTML = result[4]; 
+					document.getElementById("cpos").innerHTML = result[3];
+					document.getElementById("ccertid").innerHTML = result[4]; 
+					document.getElementById("cholder").innerHTML = result[5]; 
 				
 				}
 				
 				});
 					
-			}
-				
-				
+			}		
 		
     </script>
 	
