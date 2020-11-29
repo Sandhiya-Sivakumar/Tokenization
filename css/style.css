@@ -1,5 +1,5 @@
 /* @extend display-flex; */
-display-flex, .display-flex, .display-flex-center, .issue-content, .signin-content, .social-login, .socials {
+display-flex, .display-flex, .display-flex-center, .issue-content, .retrieve-content, .social-login, .socials {
   display: flex;
   display: -webkit-flex; }
 
@@ -134,13 +134,13 @@ input, select, textarea {
   -o-appearance: unset !important;
   -ms-appearance: unset !important; }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+/*input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   appearance: none !important;
   -moz-appearance: none !important;
   -webkit-appearance: none !important;
   -o-appearance: none !important;
   -ms-appearance: none !important;
-  margin: 0; }
+  margin: 0; } */
 
 input:focus, select:focus, textarea:focus {
   outline: none;
@@ -255,7 +255,7 @@ body {
 .issue-content {
   padding: 75px 0; }
 
-.issue-form, .issue-image, .signin-form, .signin-image {
+.issue-form, .issue-image, .retrieve-form, .retrieve-image {
   width: 90%;
   overflow: hidden; }
 
@@ -289,7 +289,7 @@ figure {
   .form-button:hover {
     background: #4292dc; }
 
-#signin {
+#retrieve {
   margin-top: 16px; }
 
 .issue-image-link {
@@ -450,7 +450,7 @@ label.valid {
 .material-icons-name {
   font-size: 18px; }
 
-.signin-content {
+.retrieve-content {
   padding-top: 67px;
   padding-bottom: 87px; }
 
@@ -506,11 +506,11 @@ label.valid {
 .zmdi-google {
   background: #e72734; }
 
-.signin-form {
+.retrieve-form {
   margin-right: 90px;
   margin-left: 80px; }
 
-.signin-image {
+.retrieve-image {
   margin-left: 110px;
   margin-right: 20px;
   margin-top: 10px; }
@@ -523,7 +523,7 @@ label.valid {
   .container {
     max-width: 1200px; } }
 @media screen and (max-width: 768px) {
-  .issue-content, .signin-content {
+  .issue-content, .retrieve-content {
     flex-direction: column;
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
@@ -542,7 +542,7 @@ label.valid {
     /* box-sizing: border-box; */
     padding: 0 30px; }
 
-  .signin-image {
+  .retrieve-image {
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 50px;
@@ -552,9 +552,10 @@ label.valid {
     -o-order: 2;
     -ms-order: 2; }
 
-  .issue-form, .issue-image, .signin-form, .signin-image {
+  .issue-form, .issue-image, .retrieve-form, .retrieve-image {
     width: auto; }
 
+	
   .social-login {
     justify-content: center;
     -moz-justify-content: center;
@@ -563,9 +564,10 @@ label.valid {
     -ms-justify-content: center; }
 
   .form-button {
-    text-align: center; }
+    text-align: center;
+	}
 
-  .signin-form {
+  .retrieve-form {
     order: 1;
     -moz-order: 1;
     -webkit-order: 1;
