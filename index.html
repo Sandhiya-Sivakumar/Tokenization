@@ -86,6 +86,7 @@
 						<div class="form-group">
                                 Total Certificates Issued : 
                                 <div id="tsupply" style="color:green;"/> <div>
+				<a  href="#" id="transresult"> </a>
                             </div>
                     </div>
                 </div>
@@ -694,7 +695,7 @@
 				var result = myContract.methods.totalSupply().call(function (err, result) {
 				
 				if (err) { console.log(err); }
-				if (result) { document.getElementById("tsupply").innerHTML = result - 1; }
+				if (result) { document.getElementById("tsupply").innerHTML = result; }
 				
 				});
 					
@@ -722,7 +723,7 @@
 				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, cID, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
-				if (result) { document.getElementById("result").innerHTML = result; }
+				if (result) { document.getElementById("transresult").innerHTML = result; }
 				
 				});
 					
