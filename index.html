@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>College Certificate Issue</title>
- 
+    <title>College Certificate</title>
+
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="css/style.css">
 	
 	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+	
 </head>
 <body>
 
     <div class="main">
 
-        <!-- Sign up form -->
+        <!-- Certificate Issue -->
         <section class="issue">
             <div class="container">
                 <div class="issue-content">
                     <div class="issue-form">
-                        <h2 class="form-title">Kumaraguru College of Technology</h2>
+                        <h2 class="form-title">Issue Certificate</h2>
                         <form  class="issue-form" id="issue-form">
 						
 						<div class="form-group">
@@ -57,30 +58,43 @@
                             </div>
 							
                             
-                            <div class="form-group form-button">
-                                <input type="button" onclick="issue_cert()" value="Issue Certificate"/>
+                            <div class="btn">
+                                <input type="button" onclick="issue_cert()" value="Issue Certificate" 
+								style="width:75%;
+								background-color: #521c94;
+								 border: 2px solid;
+  border-radius: 0.6em;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;"/>
                             </div>
                         </form>
                     </div>
                     <div class="issue-image">
-                        <figure><img src="images/issue-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="issue-image-link">Verify a Certificate</a>
+                        <figure><img src="https://yt3.ggpht.com/a/AATXAJy1Gaf6gOAO1-MKBFtvjAE6xN2ZoUTgAGRIH581Lw=s900-c-k-c0xffffffff-no-rj-mo" alt="kct logo"></figure>
+              
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sing in  Form -->
-        <section class="sign-in">
+        <!-- Verify Certificate Details -->
+        <section class="retrieve">
             <div class="container">
-                <div class="signin-content">
-                    <div class="signin-image">
-                        <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                <div class="retrieve-content">
+                    <div class="retrieve-image">
+                        <figure><img src="https://cdn.dribbble.com/users/269807/screenshots/4782863/verify.jpg" alt="verify image"></figure>
                     </div>
 
-                    <div class="signin-form">
+                    <div class="retrieve-form">
                         <h2 class="form-title">Verify Certificate</h2>
-                        <form  class="register-form" id="login-form">
+                        <form  class="register-form" >
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" id="tokenIDd" placeholder="Certificate Token ID"/>
@@ -93,9 +107,22 @@
 								<tr><td> Certificate ID : </td> <td> <div id="ccertid"></div> </td></tr>
 								<tr><td> Holder Wallet Address : </td> <td> <div id="cholder"></div></td></tr>
 							</table>
-							</div>
-                            <div class="form-group form-button">
-                                <input type="button" onclick="view_certdetails()" value="View Certificate"/>
+							</div><br><br>
+                            <div class="btn">
+                                <input type="button" onclick="view_certdetails()" value="View Certificate"
+								style="width:75%;
+								background-color: #a8203c;
+								 border: 2px solid;
+  border-radius: 0.6em;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;"/>
                             </div>
                         </form>
                         
