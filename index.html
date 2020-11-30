@@ -34,9 +34,9 @@
                         <h2 class="form-title">Issue Certificate</h2>
                         <form  class="issue-form" id="issue-form">
 						
-						<div class="form-group">
+						<div class="form-group" >
                                 <label ><span class="iconify" data-icon="zmdi:format-list-numbered" data-inline="false"></span></span></span></label>
-                                <input type="text" id="cID" placeholder="Certificate ID"/>
+                                <input type="text" id="tokenID" placeholder="Certificate ID"/>
                             </div>
 							
                             <div class="form-group">
@@ -45,18 +45,18 @@
                             </div>
 							
                             <div class="form-group">
-                                <label><span class="iconify" data-icon="zmdi:assignment-check" data-inline="false"></span></label>
-                                <input type="text"  id="desgn" placeholder="Designation"/>
-                            </div>
-							
-                            <div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:balance" data-inline="false"></span></i></label>
                                 <input type="text" id="inst" placeholder="Institution"/>
                             </div>
+		
+			  <div class="form-group">
+                                <label><span class="iconify" data-icon="zmdi:assignment-check" data-inline="false"></span></label>
+                                <input type="text"  id="desgn" placeholder="Department"/>
+                            </div>
 							
-							<div class="form-group">
+			  <div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:equalizer" data-inline="false"></span></i></label>
-                                <input type="text" id="pos" placeholder="Position"/>
+                                <input type="text" id="pos" placeholder="Classification"/>
                             </div>
 							
 							<div class="form-group">
@@ -64,9 +64,9 @@
                                 <input type="text" id="address" placeholder="Holder Wallet Address"/>
                             </div>
 							
-							<div class="form-group">
+							<div class="form-group" style="visibility:hidden;">
                                 <label ><span class="iconify" data-icon="zmdi:labels" data-inline="false"></span></label>
-                                <input type="text" id="tokenID" placeholder="Token ID"/>
+                                <input type="date" id="cID" placeholder="Date of Issue"/>
                             </div>
 							
                             
@@ -113,15 +113,15 @@
                         <form  class="register-form" >
                             <div class="form-group">
                                 <label for="your_name"><span class="iconify" data-icon="zmdi:labels" data-inline="false"></span></label>
-                                <input type="text" id="tokenIDd" placeholder="Certificate Token ID"/>
+                                <input type="text" id="tokenIDd" placeholder="Certificate ID"/>
                             </div>
                             <div>
 							<table >
 								<tr><td style="width:50%;height:30px;"> Name :   <div id="cname" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Desgination :   <div id="cdesgn" style="color:green;"></div></td></tr>
 								<tr><td style="width:50%;height:30px;"> Institution :  <div id="cinst" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Position :  <div id="cpos" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Certificate ID :   <div id="ccertid" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Department :   <div id="cdesgn" style="color:green;"></div></td></tr>
+								<tr><td style="width:50%;height:30px;"> Classification :  <div id="cpos" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Date of Issue :   <div id="ccertid" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Holder Wallet Address :  <div id="cholder" style="color:green;"></div></td></tr>
 							</table>
 							</div><br><br>
