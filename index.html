@@ -66,7 +66,7 @@
 							
 							<div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:labels" data-inline="false"></span></label>
-                                <input type="date" id="cID" placeholder="Date of Issue"/>
+                                <input type="" id="cID" placeholder="Date of Issue"/>
                             </div>
 							
                             
@@ -721,13 +721,14 @@
 				var desgn = document.getElementById("desgn").value;
 				var inst = document.getElementById("inst").value;
 				var cID = document.getElementById("cID").value;
+				var date = cID.toString();
 				var pos = document.getElementById("pos").value;
 				var address = document.getElementById("address").value;
 				var tokenID = document.getElementById("tokenID").value;
 				//var ipfshash = document.getElementById("ipfshash").value;
 				
 				//call the "issue certificate" function
-				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, cID, address).send(function (err, result) {
+				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, date, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
 				//if (result) { document.getElementById("transresult").innerHTML = result; }
