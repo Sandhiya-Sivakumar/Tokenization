@@ -294,9 +294,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "uint256",
-				"name": "ui_Cert_ID",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "ui_Cert_date",
+				"type": "string"
 			},
 			{
 				"internalType": "address",
@@ -564,9 +564,9 @@
 				"type": "string"
 			},
 			{
-				"internalType": "uint256",
-				"name": "Cert_ID",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "Cert_date",
+				"type": "string"
 			},
 			{
 				"internalType": "address",
@@ -685,10 +685,12 @@
 		"type": "function"
 	}
 ]
+	
+
 
 		
 				//Smart Contract Address
-				var contractaddress = '0xc678717e08274eDeC083eBb4133E3f7BE7d3E85a';
+				var contractaddress = '0x941De454D93f3C96c69BCB4afFDF6191dE15FA19';
 				
 					// Function to get the status about ERC-721 Token
 			function loadstatus() {
@@ -721,14 +723,14 @@
 				var desgn = document.getElementById("desgn").value;
 				var inst = document.getElementById("inst").value;
 				var cID = document.getElementById("cID").value;
-				var date = cID.toString();
+				
 				var pos = document.getElementById("pos").value;
 				var address = document.getElementById("address").value;
 				var tokenID = document.getElementById("tokenID").value;
 				//var ipfshash = document.getElementById("ipfshash").value;
 				
 				//call the "issue certificate" function
-				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, date, address).send(function (err, result) {
+				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, cID, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
 				//if (result) { document.getElementById("transresult").innerHTML = result; }
