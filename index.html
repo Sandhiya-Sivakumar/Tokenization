@@ -51,12 +51,12 @@
 		
 			  <div class="form-group">
                                 <label><span class="iconify" data-icon="zmdi:assignment-check" data-inline="false"></span></label>
-                                <input type="text"  id="desgn" placeholder="Department"/>
+                                <input type="text"  id="dept" placeholder="Department(eg: B.E. Computer Science Engineering)"/>
                             </div>
 							
 			  <div class="form-group">
                                 <label ><span class="iconify" data-icon="zmdi:equalizer" data-inline="false"></span></i></label>
-                                <input type="text" id="pos" placeholder="Classification"/>
+                                <input type="text" id="cls" placeholder="Classification(eg: First Class)"/>
                             </div>
 							
 							<div class="form-group">
@@ -65,8 +65,8 @@
                             </div>
 							
 							<div class="form-group">
-                                <label ><span class="iconify" data-icon="zmdi:labels" data-inline="false"></span></label>
-                                <input type="date" id="cID" placeholder="Date of Issue"/>
+                                <label ><span class="iconify" data-icon="zmdi:labels" data-inline="false">Date of Issue: </span></label>
+                                <input type="date" id="issdate" placeholder="Date of Issue"/>
                             </div>
 							
                             
@@ -119,9 +119,9 @@
 							<table >
 								<tr><td style="width:50%;height:30px;"> Name :   <div id="cname" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Institution :  <div id="cinst" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Department :   <div id="cdesgn" style="color:green;"></div></td></tr>
-								<tr><td style="width:50%;height:30px;"> Classification :  <div id="cpos" style="color:green;"></div> </td></tr>
-								<tr><td style="width:50%;height:30px;"> Date of Issue :   <div id="ccertid" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Department :   <div id="cdept" style="color:green;"></div></td></tr>
+								<tr><td style="width:50%;height:30px;"> Classification :  <div id="ccls" style="color:green;"></div> </td></tr>
+								<tr><td style="width:50%;height:30px;"> Date of Issue :   <div id="cissdate" style="color:green;"></div> </td></tr>
 								<tr><td style="width:50%;height:30px;"> Holder Wallet Address :  <div id="cholder" style="color:green;"></div></td></tr>
 							</table>
 							</div><br><br>
@@ -280,7 +280,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "ui_Desg",
+				"name": "ui_Dept",
 				"type": "string"
 			},
 			{
@@ -290,12 +290,12 @@
 			},
 			{
 				"internalType": "string",
-				"name": "ui_pos",
+				"name": "ui_Cls",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "ui_Cert_date",
+				"name": "ui_Iss_date",
 				"type": "string"
 			},
 			{
@@ -550,7 +550,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "Desg",
+				"name": "Dept",
 				"type": "string"
 			},
 			{
@@ -560,12 +560,12 @@
 			},
 			{
 				"internalType": "string",
-				"name": "ui_pos",
+				"name": "Cls",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "Cert_date",
+				"name": "Iss_date",
 				"type": "string"
 			},
 			{
@@ -684,13 +684,10 @@
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
-	
-
-
+] 
 		
 				//Smart Contract Address
-				var contractaddress = '0x941De454D93f3C96c69BCB4afFDF6191dE15FA19';
+				var contractaddress = '0xb6e444088fb6AB6D2a4926078fb58C76361D23b8';
 				
 					// Function to get the status about ERC-721 Token
 			function loadstatus() {
@@ -720,17 +717,16 @@
 				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
 								
 				var name = document.getElementById("name").value;
-				var desgn = document.getElementById("desgn").value;
+				var dept = document.getElementById("dept").value;
 				var inst = document.getElementById("inst").value;
-				var cID = document.getElementById("cID").value;
-				
-				var pos = document.getElementById("pos").value;
+				var issdate = document.getElementById("issdate").value;
+				var cls = document.getElementById("cls").value;
 				var address = document.getElementById("address").value;
 				var tokenID = document.getElementById("tokenID").value;
 				//var ipfshash = document.getElementById("ipfshash").value;
 				
 				//call the "issue certificate" function
-				var result = myContract.methods.issueCert(tokenID, name, desgn, inst, pos, cID, address).send(function (err, result) {
+				var result = myContract.methods.issueCert(tokenID, name, dept, inst, cls, issdate, address).send(function (err, result) {
 				
 				if (err) { console.log(err); }
 				//if (result) { document.getElementById("transresult").innerHTML = result; }
@@ -758,10 +754,10 @@
 				if (result) { 
 				
 					document.getElementById("cname").innerHTML = result[0]; 
-					document.getElementById("cdesgn").innerHTML = result[1]; 
+					document.getElementById("cdept").innerHTML = result[1]; 
 					document.getElementById("cinst").innerHTML = result[2]; 
-					document.getElementById("cpos").innerHTML = result[3];
-					document.getElementById("ccertid").innerHTML = result[4]; 
+					document.getElementById("ccls").innerHTML = result[3];
+					document.getElementById("cissdate").innerHTML = result[4]; 
 					document.getElementById("cholder").innerHTML = result[5]; 
 				
 				}
