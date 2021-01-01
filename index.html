@@ -1,7 +1,7 @@
 <!-- 
     Author       : Sandhiya S and Ramaguru R
     Date Created : 28.11.2020
-    Date Updated : 30.11.2020
+    Date Updated : 01.01.2020
 -->
 	
 
@@ -29,8 +29,8 @@
         <!-- Certificate Issue -->
         <section class="issue">
             <div class="container">
-                <div class="issue-content">
-                    <div class="issue-form" style="width:120%;">
+                <div class="issue-content" id="issueDiv">
+                    <div class="issue-form" style="width:80%;">
                         <h2 class="form-title">Issue Certificate</h2>
                         <form  class="issue-form" id="issue-form">
 						
@@ -66,40 +66,122 @@
 							
 							<div class="form-group">
 							   
-                                <label>Date of Issue</label>
-                                <br><br><input type="date" id="issdate" placeholder="Date of Issue"/>
+                                <label><b>Date of Issue</b></label>
+                                <br><br><input type="date" id="issdate" placeholder="Date of Issue" style="width:45%;"/>
                             </div>
 							
                             
                             <div class="btn">
                                 <input type="button" onclick="issue_cert()" value="Issue Certificate" 
+								style="width:25%;
+								background-color: #03fc6f;
+								border: 2px solid;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+							
+							<div style="float:right;">
+							<b>Want to modify an issued certificate?</b>
+							<div class="btn">
+                                <input type="button" onclick="show_modify()" value="Modify Certificate" 
 								style="width:75%;
 								background-color: #521c94;
-								 border: 2px solid;
-  border-radius: 0.6em;
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  color: #fff;
-  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;"/>
+								border: 2px solid;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
                             </div>
+							</div>
                         </form>
-                    </div>
-                    <div class="issue-image">
-                        <figure><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Anna_University_Logo.svg/1200px-Anna_University_Logo.svg.png" alt="kct logo"></figure>
+						</div>
+						</div>
+						<!--<div class="issue-image" style="width:20%;">
+                        <figure ><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Anna_University_Logo.svg/1200px-Anna_University_Logo.svg.png" alt="kct logo"></figure>
 						<div class="form-group">
                                 Total Certificates Issued : 
-                                <div id="tsupply" style="color:green;font-weight:bolder;"/> <div>
-				
+                        <div id="tsupply" style="color:green;font-weight:bolder;"/> 
+                        </div>
+						</div> -->
+					
+		<!-- Modify Certificate -->
+						<div class="modify-content" id="modifyDiv" style="padding-right:80px;display:none;">
+						<div class="modify-form">
+                        <h2 class="form-title">Modify Certificate</h2>
+                        <form  class="register-form" >
+                            <div class="form-group">
+                               <table>
+                                <tr><td><input type="text" id="mtokenID" placeholder="Enter Certificate ID" /></td>
+								<td><input type="button" class="iconify" data-icon="zmdi:search" style="height:15%;width:15%" onclick="getdetails()"/></td></tr>
+                            </table>
+							</div>
+                            <div>
+							<table >
+								<tr><td style="width:50%;height:20px;"> <b>Name :</b>   <input type="text"  id="mname" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Institution :</b>   <input type="text" id="minst" /> </td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Department :</b>     <input type="text" id="mdept"/></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Classification :</b>  <input type="text" id="mcls" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Date of Issue :</b>   <input type="date" id="missdate" /></td></tr>
+								<tr><td style="width:50%;height:20px;padding-top:15px;"> <b>Holder Wallet Address :</b>    <input type="text" id="mholder" /></td></tr>
+							</table>
+							</div><br><br>
+                            
+							 <div class="btn">
+                                <input type="button" onclick="modify_cert()" value="Modify Certificate" 
+								style="width:25%;
+								background-color: #03fc6f;
+								border: 2px solid;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
                             </div>
+							<div style="float:right; padding:60px;">
+							<b>Want to issue a new certificate?</b>
+							<div class="btn">
+                                <input type="button" onclick="show_issue()" value="Issue Certificate" 
+								style="width:75%;
+								background-color: #521c94;
+								border: 2px solid;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
+                            </div>
+							</div>
+                        </form> 
                     </div>
+					</div>	  
                 </div>
-            </div>
         </section>
+
+	
 
         <!-- Verify Certificate Details -->
         <section class="retrieve">
@@ -130,17 +212,17 @@
                                 <input type="button" onclick="view_certdetails()" value="View Certificate"
 								style="width:75%;
 								background-color: #a8203c;
-								 border: 2px solid;
-  border-radius: 0.6em;
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  color: #fff;
-  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;"/>
+								border: 2px solid;
+								border-radius: 0.6em;
+								color: white;
+								padding: 10px 15px;
+								text-decoration: none;
+								margin: 4px 2px;
+								cursor: pointer;
+								color: #fff;
+								box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+								-webkit-transition: all 150ms ease-in-out;
+								transition: all 150ms ease-in-out;"/>
                             </div>
                         </form>
                         
@@ -736,12 +818,27 @@
 					
 			}
 			
+			function show_issue() {
 			
-				
+			var modifyDiv = document.getElementById("modifyDiv");
+			modifyDiv.style.display = "none";
+			var issueDiv = document.getElementById("issueDiv");
+			issueDiv.style.display= "block";
+			
+			}
+			
+			function show_modify() {
+			
+			var issueDiv = document.getElementById("issueDiv");
+			issueDiv.style.display = "none";
+			var modifyDiv = document.getElementById("modifyDiv");
+			modifyDiv.style.display = "block";
+			
+			}			
 			// Function to call the "View Details" in Deployed Smart Contract
 			function view_certdetails() {
 					
-				console.log("Getting College Competition Certificate Details");
+				console.log("Getting College degree Certificate Details");
 						
 				//Instantiate and connect to contract address via ABI
 				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
@@ -765,7 +862,36 @@
 				
 				});
 					
-			}		
+			}
+
+				function getdetails() {
+					
+				console.log("Getting College degree Certificate Details");
+						
+				//Instantiate and connect to contract address via ABI
+				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '30000000'});
+								
+				var tokenID = document.getElementById("mtokenID").value;
+				
+				//call the "view certificate" function
+				var result = myContract.methods.retrieveCert(tokenID).call(function (err, result) {
+				
+				if (err) { console.log(err); }
+				if (result) { 
+				
+					document.getElementById("mname").innerHTML = result[0]; 
+					document.getElementById("mdept").innerHTML = result[1]; 
+					document.getElementById("minst").innerHTML = result[2]; 
+					document.getElementById("mcls").innerHTML = result[3];
+					document.getElementById("missdate").innerHTML = result[4]; 
+					document.getElementById("mholder").innerHTML = result[5]; 
+				
+				}
+				
+				});
+					
+			}
+			
 		
     </script>
 	
