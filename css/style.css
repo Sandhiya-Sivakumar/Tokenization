@@ -1,5 +1,5 @@
 /* @extend display-flex; */
-display-flex, .display-flex, .display-flex-center, .issue-content, .retrieve-content, .social-login, .socials {
+display-flex, .display-flex, .display-flex-center, .issue-content, .retrieve-content, .modify-content .social-login, .socials {
   display: flex;
   display: -webkit-flex; }
 
@@ -255,7 +255,7 @@ body {
 .issue-content {
   padding: 75px 0; }
 
-.issue-form, .issue-image, .retrieve-form, .retrieve-image {
+.issue-form, .issue-image, .retrieve-form, .retrieve-image, .modify-form {
   width: 90%;
   overflow: hidden; }
 
@@ -450,7 +450,7 @@ label.valid {
 .material-icons-name {
   font-size: 18px; }
 
-.retrieve-content {
+.retrieve-content, .modify-content {
   padding-top: 67px;
   padding-bottom: 87px; }
 
@@ -506,7 +506,7 @@ label.valid {
 .zmdi-google {
   background: #e72734; }
 
-.retrieve-form {
+.retrieve-form, .modify-form {
   margin-right: 90px;
   margin-left: 80px; }
 
@@ -523,7 +523,7 @@ label.valid {
   .container {
     max-width: 1200px; } }
 @media screen and (max-width: 768px) {
-  .issue-content, .retrieve-content {
+  .issue-content, .retrieve-content, .modify-content {
     flex-direction: column;
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
@@ -552,7 +552,7 @@ label.valid {
     -o-order: 2;
     -ms-order: 2; }
 
-  .issue-form, .issue-image, .retrieve-form, .retrieve-image {
+  .issue-form, .issue-image, .retrieve-form, .retrieve-image, .modify-form {
     width: auto; }
 
 	
@@ -567,7 +567,7 @@ label.valid {
     text-align: center;
 	}
 
-  .retrieve-form {
+  .retrieve-form, .modify-form {
     order: 1;
     -moz-order: 1;
     -webkit-order: 1;
@@ -592,3 +592,5 @@ label.valid {
     margin-bottom: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+
