@@ -69,7 +69,7 @@
                                 <label><b>Date of Issue</b></label>
                                 <br><br><input type="date" id="issdate" placeholder="Date of Issue" style="width:45%;"/>
                             </div>
-							
+	    <div id="transresult"></div>		
                             
                             <div class="btn">
                                 <input type="button" onclick="issue_cert()" value="Issue Certificate" 
@@ -811,8 +811,11 @@
 				//call the "issue certificate" function
 				var result = myContract.methods.issueCert(tokenID, name, dept, inst, cls, issdate, address).send(function (err, result) {
 				
-				if (err) { console.log(err); }
-				//if (result) { document.getElementById("transresult").innerHTML = result; }
+				if (err) { 
+					console.log(err);
+					document.getElementById("transresult").innerHTML = err;
+					 }
+				if (result) { document.getElementById("transresult").innerHTML = "Certificate Issued Successfully"; }
 				
 				});
 					
