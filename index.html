@@ -69,8 +69,8 @@
                                 <label><b>Date of Issue</b></label>
                                 <br><br><input type="date" id="issdate" placeholder="Date of Issue" style="width:45%;"/>
                             </div>
-	    <div id="transresult"></div>		
-                            
+	    		
+                        
                             <div class="btn">
                                 <input type="button" onclick="issue_cert()" value="Issue Certificate" 
 								style="width:25%;
@@ -815,7 +815,38 @@
 					console.log(err);
 					document.getElementById("transresult").innerHTML = err;
 					 }
-				if (result) { document.getElementById("transresult").innerHTML = "Certificate Issued Successfully"; }
+				if (result) { 
+					//document.getElementById("transresult").innerHTML = "Certificate Issued Successfully"; }
+				
+				});
+					
+			}
+																 
+			function modify_cert() {
+					
+				console.log("Modifying College Competition Certificate");
+						
+				//Instantiate and connect to contract address via ABI
+				var myContract = new web3.eth.Contract(abi,contractaddress, {from: account, gasPrice: '5000000', gas: '3000000'});
+								
+				var name = document.getElementById("mname").value;
+				var dept = document.getElementById("mdept").value;
+				var inst = document.getElementById("minst").value;
+				var issdate = document.getElementById("missdate").value;
+				var cls = document.getElementById("mcls").value;
+				var address = document.getElementById("mholder").value;
+				var tokenID = document.getElementById("mtokenID").value;
+				//var ipfshash = document.getElementById("ipfshash").value;
+				
+				//call the "issue certificate" function
+				var result = myContract.methods.issueCert(tokenID, name, dept, inst, cls, issdate, address).send(function (err, result) {
+				
+				if (err) { 
+					console.log(err);
+					//document.getElementById("transresult").innerHTML = err;
+					 }
+				if (result) { 
+					//document.getElementById("transresult").innerHTML = "Certificate Issued Successfully"; }
 				
 				});
 					
