@@ -49,6 +49,8 @@ nav li a:hover{
 }
 
 
+
+
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center, .issue-content, .retrieve-content, .modify-content .social-login, .socials {
   display: flex;
@@ -302,7 +304,7 @@ body {
   -ms-transform: translate(-50%, -50%); }
 
 .issue {
-  margin-bottom: 150px; }
+  margin-bottom: 100px; }
 
 .issue-content {
   padding: 75px 0; }
