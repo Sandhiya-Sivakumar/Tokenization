@@ -1,3 +1,54 @@
+/* ------------------------ NAVBAR ----------------*/
+
+
+header{
+  display:flex;
+  justify-content: space-between;
+  color: white;
+  background: rgba(1,0,0,0.2)
+}
+
+header div{
+  display:flex;
+  font-size:20px;
+  font-weight:bold;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+header div i{
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+
+header nav{
+  padding: 1rem 2rem;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+nav li a{
+  padding: 1rem;
+  margin: 1rem;
+  text-decoration: none;
+  color: white;
+  transition: all 250ms ease-in;
+}
+
+nav li a:hover{
+  background: rgba(255,255,255,.3);
+  color: black;
+}
+
+
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center, .issue-content, .retrieve-content, .modify-content .social-login, .socials {
   display: flex;
