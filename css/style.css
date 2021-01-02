@@ -186,7 +186,8 @@ h2 {
   font-size: 36px; }
 
 .main {
-  background: #f8f8f8;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(https://i.ytimg.com/vi/OUF6Cc_7qwM/maxresdefault.jpg) no-repeat center center fixed;
+  background-size:cover;
   padding: 150px 0; }
 
 .clear {
